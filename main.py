@@ -14,9 +14,9 @@ async def on_ready():
     
 async def status_task():
     while True:
-        await bot.change_presence(activity=discord.Game('!tictactoe'), status=discord.Status.online)
+        await client.change_presence(activity=discord.Game('!tictactoe'), status=discord.Status.online)
         await asyncio.sleep(5)
-        await bot.change_presence(activity=discord.Game('TicTacToe ist Cool'), status=discord.Status.online)
+        await client.change_presence(activity=discord.Game('TicTacToe ist Cool'), status=discord.Status.online)
         await asyncio.sleep(5)    
 
 
