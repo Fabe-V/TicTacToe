@@ -7,6 +7,19 @@ import os
 
 client = commands.Bot(command_prefix="!")
 
+@client.event
+async def on_ready():
+    print('Ich bin online')
+    bot.loop.create_task(status_task())
+    
+async def status_task():
+    while True:
+        await bot.change_presence(activity=discord.Game('!tictactoe'), status=discord.Status.online)
+        await asyncio.sleep(5)
+        await bot.change_presence(activity=discord.Game('TicTacToe ist Cool'), status=discord.Status.online)
+        await asyncio.sleep(5)    
+
+
 player1 = ""
 player2 = ""
 turn = ""
