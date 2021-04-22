@@ -10,7 +10,7 @@ client = commands.Bot(command_prefix="!")
 @client.event
 async def on_ready():
     print('Ich bin online')
-    bot.loop.create_task(status_task())
+    client.loop.create_task(status_task())
     
 async def status_task():
     while True:
